@@ -1,0 +1,7 @@
+CREATE TABLE [CADASTRO_CLIENTE] (
+	[idCLIENTE] int IDENTITY(1,1) NOT NULL UNIQUE,
+	[CPF, RG ou CHN] int NOT NULL,
+	[ data nascimento] date NOT NULL,
+	PRIMARY KEY ([idCLIENTE])
+);
+

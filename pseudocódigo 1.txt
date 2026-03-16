@@ -1,0 +1,10 @@
+start 
+read grade 1
+read grade 2 
+make grade 1 plus grade 2 
+display the result
+read the result
+make the result divided by two
+display the new result
+call the new result the "average of the grades"
+finish
