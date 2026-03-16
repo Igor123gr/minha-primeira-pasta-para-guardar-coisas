@@ -7,4 +7,4 @@ read the result
 make the result divided by two
 display the new result
 call the new result the "average of the grades"
-finish
+end
