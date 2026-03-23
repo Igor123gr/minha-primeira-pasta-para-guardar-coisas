@@ -1,0 +1,580 @@
+{
+	"tables": {
+		"230a9649-a794-4c98-9bdd-8c57e1a811bb": {
+			"id": "230a9649-a794-4c98-9bdd-8c57e1a811bb",
+			"visible": true,
+			"name": "almoxarifados",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "fbedc31a-4c5d-4dc6-9515-050e65ce34ce",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"estimatedSize": ""
+				},
+				{
+					"id": "96992b65-2af7-455c-8e99-367a09c3a0f4",
+					"name": "Nome",
+					"datatype": "STRING",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"estimatedSize": ""
+				},
+				{
+					"id": "ad669a9a-28bf-4da2-8505-36e8d04b45e2",
+					"name": "endereço",
+					"datatype": "STRING",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"27daf0f2-4d37-460d-9539-3937b56310cf"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "508acdad-3337-4dd7-b5c1-219ff9f0984c",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": []
+				},
+				{
+					"id": "73c0ce00-2138-4629-bc68-d467167b1d34",
+					"isPk": false,
+					"name": "almoxarifados_ak_1",
+					"cols": [
+						{
+							"id": "efdf3634-659b-4b01-87d6-ef58f1bc1222",
+							"colid": "fbedc31a-4c5d-4dc6-9515-050e65ce34ce"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"8123df98-7193-46cc-a052-6c21de557bb5": {
+			"id": "8123df98-7193-46cc-a052-6c21de557bb5",
+			"visible": true,
+			"name": "Produtos",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "3bb190f9-a725-49ec-bf8b-a53191e28a78",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"estimatedSize": ""
+				},
+				{
+					"id": "5302c07c-ef80-4d26-ae09-168782f84773",
+					"name": "quantidade",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"830aa09e-608f-465f-b087-da346abfcf1e",
+				"2d4a7fb5-9eee-4163-acc4-13a9c84cc0dc"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "ab7074e2-a20d-4581-a9a8-0e041a9f54d7",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": []
+				},
+				{
+					"id": "583a0a73-fd18-4234-aef0-87ad4959f337",
+					"isPk": false,
+					"name": "Produtos_ak_1",
+					"cols": [
+						{
+							"id": "0c8521ac-1632-4e3a-9681-72d8df8352d9",
+							"colid": "3bb190f9-a725-49ec-bf8b-a53191e28a78"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"5b264a95-a254-4899-b853-a62004d75ea8": {
+			"id": "5b264a95-a254-4899-b853-a62004d75ea8",
+			"visible": true,
+			"name": "estoque",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "9ed6a833-ad58-4e5d-be3f-cc21ad16d4e7",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"estimatedSize": ""
+				},
+				{
+					"id": "087e155a-5e0d-4baf-9887-0e2b15828b36",
+					"name": "id almoxarifados",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"estimatedSize": ""
+				},
+				{
+					"id": "e6336849-d8d5-464c-b5af-57f45ed0ebad",
+					"name": "id Produtos",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"830aa09e-608f-465f-b087-da346abfcf1e",
+				"27daf0f2-4d37-460d-9539-3937b56310cf"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "6b0efd56-38fe-46b9-a9cf-99a7cb6348fd",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": []
+				},
+				{
+					"id": "14818541-4520-40ad-8722-343586d1b3ab",
+					"isPk": false,
+					"name": "produtos-almoxarifado_ak_1",
+					"cols": [
+						{
+							"id": "c4cf63d1-aa0b-4d88-af86-5e81f31fc3fd",
+							"colid": "e6336849-d8d5-464c-b5af-57f45ed0ebad"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"ba1003f5-0547-4cbf-a1e3-cbd9ab97b801": {
+			"id": "ba1003f5-0547-4cbf-a1e3-cbd9ab97b801",
+			"visible": true,
+			"name": "categoria",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "d5f3550c-2701-40a3-8cc6-022d44f5d536",
+					"name": "id",
+					"datatype": "STRING",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"estimatedSize": ""
+				},
+				{
+					"id": "d662647c-6660-4450-8de3-6a1b55cecde9",
+					"name": "nome",
+					"datatype": "STRING",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"estimatedSize": ""
+				},
+				{
+					"id": "355f2597-b683-48cb-b21e-eff5ae0341a9",
+					"name": "descrição",
+					"datatype": "STRING",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"2d4a7fb5-9eee-4163-acc4-13a9c84cc0dc"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "de1d0567-7fb6-442f-9d26-2bcdad788ceb",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": []
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		}
+	},
+	"relations": {
+		"830aa09e-608f-465f-b087-da346abfcf1e": {
+			"id": "830aa09e-608f-465f-b087-da346abfcf1e",
+			"name": "id Produtos_id",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "14818541-4520-40ad-8722-343586d1b3ab",
+			"parent": "5b264a95-a254-4899-b853-a62004d75ea8",
+			"child": "8123df98-7193-46cc-a052-6c21de557bb5",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "many",
+			"c_ch": "one",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "dce669e5-675a-4c2c-b170-ec06341631f7",
+					"parentcol": "e6336849-d8d5-464c-b5af-57f45ed0ebad",
+					"childcol": "3bb190f9-a725-49ec-bf8b-a53191e28a78"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"27daf0f2-4d37-460d-9539-3937b56310cf": {
+			"id": "27daf0f2-4d37-460d-9539-3937b56310cf",
+			"name": "id_id almoxarifados",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "73c0ce00-2138-4629-bc68-d467167b1d34",
+			"parent": "230a9649-a794-4c98-9bdd-8c57e1a811bb",
+			"child": "5b264a95-a254-4899-b853-a62004d75ea8",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "666d605d-1b1b-44f5-8b6f-cc40bd19e7da",
+					"parentcol": "fbedc31a-4c5d-4dc6-9515-050e65ce34ce",
+					"childcol": "087e155a-5e0d-4baf-9887-0e2b15828b36"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"2d4a7fb5-9eee-4163-acc4-13a9c84cc0dc": {
+			"id": "2d4a7fb5-9eee-4163-acc4-13a9c84cc0dc",
+			"name": "id_id",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "583a0a73-fd18-4234-aef0-87ad4959f337",
+			"parent": "8123df98-7193-46cc-a052-6c21de557bb5",
+			"child": "ba1003f5-0547-4cbf-a1e3-cbd9ab97b801",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "one",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "3e8b73b0-6c43-4e45-9f0c-9ebfd8450a4b",
+					"parentcol": "3bb190f9-a725-49ec-bf8b-a53191e28a78",
+					"childcol": "d5f3550c-2701-40a3-8cc6-022d44f5d536"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		}
+	},
+	"notes": {},
+	"lines": {},
+	"model": {
+		"name": "Controle de estoque",
+		"id": "9d213645-6634-4aa6-864f-333d1022b04b",
+		"activeDiagram": "5c9dd1a3-4bbc-46e9-ae57-0e2a530b01c5",
+		"desc": "",
+		"path": "",
+		"type": "LOGICAL",
+		"version": 1,
+		"parentTableInFkCols": true,
+		"caseConvention": "under",
+		"replaceSpace": "_",
+		"color": "transparent",
+		"sideSelections": true,
+		"isDirty": true,
+		"storedin": {
+			"major": 13,
+			"minor": 0,
+			"extra": 0
+		},
+		"laststoredin": {
+			"major": 13,
+			"minor": 0,
+			"extra": 0
+		},
+		"writeFileParam": false,
+		"authorName": "",
+		"companyDetails": "",
+		"companyUrl": "",
+		"subType": "",
+		"appName": "LunaModeler",
+		"def_coltopk": false
+	},
+	"otherObjects": {},
+	"diagrams": {
+		"5c9dd1a3-4bbc-46e9-ae57-0e2a530b01c5": {
+			"name": "Main Diagram",
+			"description": "",
+			"id": "5c9dd1a3-4bbc-46e9-ae57-0e2a530b01c5",
+			"keysgraphics": true,
+			"linegraphics": "detailed",
+			"zoom": 1,
+			"background": "transparent",
+			"lineColor": "transparent",
+			"isOpen": true,
+			"main": true,
+			"diagramItems": {
+				"230a9649-a794-4c98-9bdd-8c57e1a811bb": {
+					"referencedItemId": "230a9649-a794-4c98-9bdd-8c57e1a811bb",
+					"x": 132,
+					"y": 348,
+					"gHeight": 81,
+					"gWidth": 186,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"8123df98-7193-46cc-a052-6c21de557bb5": {
+					"referencedItemId": "8123df98-7193-46cc-a052-6c21de557bb5",
+					"x": 730,
+					"y": 77,
+					"gHeight": 88,
+					"gWidth": 186,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": true,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"5b264a95-a254-4899-b853-a62004d75ea8": {
+					"referencedItemId": "5b264a95-a254-4899-b853-a62004d75ea8",
+					"x": 289,
+					"y": 46,
+					"gHeight": 98,
+					"gWidth": 213,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": true,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"ba1003f5-0547-4cbf-a1e3-cbd9ab97b801": {
+					"referencedItemId": "ba1003f5-0547-4cbf-a1e3-cbd9ab97b801",
+					"x": 988,
+					"y": 71,
+					"gHeight": 81,
+					"gWidth": 187,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				}
+			},
+			"diagramLinks": {
+				"830aa09e-608f-465f-b087-da346abfcf1e": {
+					"referencedItemId": "830aa09e-608f-465f-b087-da346abfcf1e",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"27daf0f2-4d37-460d-9539-3937b56310cf": {
+					"referencedItemId": "27daf0f2-4d37-460d-9539-3937b56310cf",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"2d4a7fb5-9eee-4163-acc4-13a9c84cc0dc": {
+					"referencedItemId": "2d4a7fb5-9eee-4163-acc4-13a9c84cc0dc",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				}
+			},
+			"scroll": {
+				"x": 0,
+				"y": 0
+			},
+			"type": "erd",
+			"showHorizontal": true,
+			"showDescriptions": true,
+			"showIndicators": true,
+			"showProgress": true,
+			"lineWidth": "2",
+			"boxSize": "0",
+			"boxSpacing": "2",
+			"boxAlign": "center",
+			"showIndicatorCaptions": true,
+			"showEstimatedSize": false,
+			"showSchemaContainer": false,
+			"showEmbeddedInParents": true,
+			"showCardinalityCaptions": true,
+			"showRelationshipNames": false,
+			"showLineCaptions": true,
+			"showDependencyCaptions": false,
+			"showColumns": true,
+			"showColumnDataTypes": true,
+			"showSampleData": false,
+			"showTableIndexes": false,
+			"showTableDescriptions": false,
+			"showRelations": true,
+			"showLines": true,
+			"showDependencies": true,
+			"backgroundImage": "na",
+			"descriptionsColor": "transparent",
+			"embeddedSpacing": "2",
+			"showMainIcon": true,
+			"showLabels": true,
+			"showCustomizations": false,
+			"showExportDimensions": false,
+			"showCompleted": true,
+			"showAnimations": false
+		}
+	},
+	"diagramsOrder": [],
+	"order": [],
+	"collapsedTreeItems": [],
+	"reverseStats": {}
+}
