@@ -1,3 +1,33 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lista de Tarefas</title>
+</head>
+
+<body>
+  <input id="tarefa" type="text" placeholder="Digite uma tarefa">
+  <button onclick="add()">Adionar</button>
+  <p id="lista">Lista de tarefa</p>
+</body>
+<script>
+  function add() {
+  
+    const tarefa = document.getElementById("tarefa").value
+    const lista = document.getElementById("lista").value
+
+
+    const li = document.createElement("li")
+    li.textContent = tarefa ; 
+    
+    document.getElementById("lista").appendChild(li)
+  }
+
+</script>
+
+
+=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,4 +64,5 @@
     </script>
   
 
+>>>>>>> 12869150bdd6427916fb7b30738402880d78b33c
 </html>
