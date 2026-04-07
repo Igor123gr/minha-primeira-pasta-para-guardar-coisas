@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <title>Exemplo</title>
+
+</head>
+
+<body>
+    <input id="num1" type="number">
+    <input id="num2" type="number">
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="multiplicação()">Multiplicação</button>
+    <p id="resultado"></p>
+</body>
+<script>
+    function somar() {
+        const n1 = parseFloat(document.getElementById("num1").value);
+        const n2 = parseFloat(document.getElementById("num2").value);
+
+        if (isNaN(n1) || isNaN(n2)) {
+            document.getElementById("resultado").textContent =
+            "Por favor, digite números válidos.";
+        } else {
+            document.getElementById("resultado").textContent =
+                "Resultado: " + (n1 + n2);
+        }
+    }
+        function subtrair() {
+            const n1 = parseFloat(document.getElementById("num1").value);
+            const n2 = parseFloat(document.getElementById("num2").value);
+
+            if (isNaN(n1) || isNaN(n2)) {
+                document.getElementById("resultado").textContent =
+                "Por favor, digite números válidos.";
+            } else {
+                document.getElementById("resultado").textContent =
+                    "Resultado: " + (n1 - (n2));
+            }
+
+        }
+         function dividir() {
+        const n1 = parseFloat(document.getElementById("num1").value);
+        const n2 = parseFloat(document.getElementById("num2").value);
+
+        if (isNaN(n1) || isNaN(n2)) {
+            document.getElementById("resultado").textContent =
+            "Por favor, digite números válidos.";
+        } else {
+            document.getElementById("resultado").textContent =
+                "Resultado: " + (n1 / n2);
+        }
+    }
+     function multiplicação() {
+        const n1 = parseFloat(document.getElementById("num1").value);
+        const n2 = parseFloat(document.getElementById("num2").value);
+
+        if (isNaN(n1) || isNaN(n2)) {
+            document.getElementById("resultado").textContent =
+            "Por favor, digite números válidos.";
+        } else {
+            document.getElementById("resultado").textContent =
+                "Resultado: " + (n1 * n2);
+        }
+    }
+
+</script>
+
+</html>
