@@ -1,0 +1,158 @@
+--------------------- 1
+SELECT COUNT(*) AS quantidade_emprestimos
+FROM emprestimo
+JOIN livro ON livro.codliv = emprestimo.codliv
+WHERE livro.titliv = 'Banco de Dados Relacionais';
+ 
+--------------------- 2
+SELECT AVG(contagem_dia) AS media_emprestimos
+FROM (
+    SELECT COUNT(*) AS contagem_dia
+    FROM emprestimo
+    WHERE DATE(datemp) = '2025-02-10'
+) AS sub;
+ 
+--------------------- 3
+SELECT livro.titliv
+FROM livro
+JOIN emprestimo ON emprestimo.codliv = livro.codliv
+WHERE DATE(emprestimo.datemp) = '2025-01-11';
+ 
+--------------------- 4
+SELECT livro.titliv
+FROM livro
+JOIN emprestimo ON emprestimo.codliv = livro.codliv
+JOIN usuario ON usuario.codusu = emprestimo.codusu
+WHERE usuario.nomusu = 'Helena Martins';
+ 
+--------------------- 5
+SELECT COUNT(*) AS quantidade_emprestimos
+FROM emprestimo
+JOIN usuario ON usuario.codusu = emprestimo.codusu
+WHERE usuario.nomusu = 'Bruno Souza';
+ 
+--------------------- 6
+SELECT usuario.nomusu
+FROM usuario
+JOIN emprestimo ON emprestimo.codusu = usuario.codusu
+JOIN livro ON livro.codliv = emprestimo.codliv
+WHERE livro.titliv = 'Cloud Computing';
+ 
+--------------------- 7
+SELECT DATE(reserva.datres) AS data, COUNT(*) AS quantidade_reservas
+FROM reserva
+GROUP BY DATE(reserva.datres)
+HAVING COUNT(*) = (
+    SELECT MAX(total) FROM (
+        SELECT COUNT(*) AS total
+        FROM reserva
+        GROUP BY DATE(datres)
+    ) AS sub
+);
+ 
+--------------------- 8
+SELECT livro.titliv
+FROM livro
+JOIN reserva ON reserva.codliv = livro.codliv
+JOIN usuario ON usuario.codusu = reserva.codusu
+WHERE usuario.nomusu = 'Fernanda Costa';
+ 
+--------------------- 9
+SELECT COUNT(*) AS quantidade_reservas
+FROM reserva
+JOIN usuario ON usuario.codusu = reserva.codusu
+WHERE usuario.nomusu = 'Gustavo Pereira';
+ 
+--------------------- 10
+SELECT livro.titliv, COUNT(*) AS quantidade_reservas
+FROM livro
+JOIN reserva ON reserva.codliv = livro.codliv
+GROUP BY livro.codliv, livro.titliv
+ORDER BY quantidade_reservas DESC
+LIMIT 1;
+ 
+--------------------- 11
+SELECT biblioteca.nombib, COUNT(*) AS quantidade_reservas
+FROM biblioteca
+JOIN livro ON livro.codbib = biblioteca.codbib
+JOIN reserva ON reserva.codliv = livro.codliv
+GROUP BY biblioteca.codbib, biblioteca.nombib
+ORDER BY quantidade_reservas DESC
+LIMIT 1;
+ 
+--------------------- 12
+SELECT biblioteca.nombib, COUNT(*) AS quantidade_emprestimos
+FROM biblioteca
+JOIN livro ON livro.codbib = biblioteca.codbib
+JOIN emprestimo ON emprestimo.codliv = livro.codliv
+GROUP BY biblioteca.codbib, biblioteca.nombib
+ORDER BY quantidade_emprestimos DESC
+LIMIT 1;
+ 
+--------------------- 13
+SELECT livro.titliv
+FROM livro
+JOIN biblioteca ON biblioteca.codbib = livro.codbib
+WHERE biblioteca.nombib = 'Biblioteca Central';
+ 
+--------------------- 14
+SELECT livro.titliv
+FROM livro
+JOIN biblioteca ON biblioteca.codbib = livro.codbib
+WHERE biblioteca.nombib = 'Biblioteca Tecnológica';
+ 
+--------------------- 15
+SELECT DISTINCT usuario.nomusu
+FROM usuario
+JOIN emprestimo ON emprestimo.codusu = usuario.codusu
+JOIN livro ON livro.codliv = emprestimo.codliv
+JOIN biblioteca ON biblioteca.codbib = livro.codbib
+WHERE biblioteca.nombib = 'Biblioteca Universitária';
+ 
+--------------------- 16
+SELECT livro.titliv
+FROM livro
+JOIN reserva ON reserva.codliv = livro.codliv
+WHERE DATE(reserva.datres) = '2025-03-10';
+ 
+--------------------- 17
+SELECT livro.titliv
+FROM livro
+JOIN emprestimo ON emprestimo.codliv = livro.codliv
+WHERE DATE(emprestimo.datemp) = '2025-02-09';
+ 
+--------------------- 18
+SELECT livro.titliv, COUNT(*) AS quantidade_emprestimos
+FROM livro
+JOIN emprestimo ON emprestimo.codliv = livro.codliv
+GROUP BY livro.codliv, livro.titliv
+ORDER BY quantidade_emprestimos DESC
+LIMIT 2;
+ 
+--------------------- 19
+SELECT livro.titliv, COUNT(*) AS quantidade_reservas
+FROM livro
+JOIN reserva ON reserva.codliv = livro.codliv
+GROUP BY livro.codliv, livro.titliv
+ORDER BY quantidade_reservas DESC
+LIMIT 2;
+ 
+--------------------- 20
+SELECT COUNT(DISTINCT emprestimo.codusu) AS quantidade_usuarios
+FROM emprestimo
+JOIN livro ON livro.codliv = emprestimo.codliv
+JOIN biblioteca ON biblioteca.codbib = livro.codbib
+WHERE biblioteca.nombib = 'Biblioteca Central';
+ 
+--------------------- 21
+SELECT COUNT(DISTINCT reserva.codusu) AS quantidade_usuarios
+FROM reserva
+JOIN livro ON livro.codliv = reserva.codliv
+JOIN biblioteca ON biblioteca.codbib = livro.codbib
+WHERE biblioteca.nombib = 'Biblioteca Tecnológica';
+ 
+--------------------- 22
+SELECT biblioteca.nombib, COUNT(*) AS quantidade_livros
+FROM biblioteca
+JOIN livro ON livro.codbib = biblioteca.codbib
+GROUP BY biblioteca.codbib, biblioteca.nombib;

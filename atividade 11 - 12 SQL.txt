@@ -1,0 +1,133 @@
+SELECT * FROM emprestimo;
+ 
+--------------------- 2
+ 
+SELECT usuario.codusu, usuario.nomusu, COUNT(*) AS quantidade_emprestimos
+FROM usuario
+JOIN emprestimo ON emprestimo.codusu = usuario.codusu
+WHERE usuario.codusu = 2
+GROUP BY usuario.codusu, usuario.nomusu;
+ 
+--------------------- 3
+ 
+SELECT MAX(datemp) AS "Data de Empréstimo" FROM emprestimo;
+ 
+--------------------- 4
+ 
+SELECT biblioteca.codbib, COUNT(*) AS quantidade_emprestimos
+FROM biblioteca
+LEFT JOIN livro ON livro.codbib = biblioteca.codbib
+LEFT JOIN emprestimo ON emprestimo.codliv = livro.codliv
+GROUP BY biblioteca.codbib;
+ 
+--------------------- 5
+SELECT biblioteca.codbib, COUNT(*) AS quantidade_reservas
+FROM biblioteca
+LEFT JOIN livro ON livro.codbib = biblioteca.codbib
+LEFT JOIN reserva ON reserva.codliv = livro.codliv
+GROUP BY biblioteca.codbib;
+ 
+--------------------- 6
+SELECT COUNT(*) AS quantidade_2018
+FROM emprestimo
+WHERE datemp >= '2018-01-01' AND datemp < '2019-01-01';
+ 
+--------------------- 7
+SELECT usuario.codusu, usuario.nomusu, COUNT(*) AS quantidade_reservas
+FROM usuario
+LEFT JOIN reserva ON reserva.codusu = usuario.codusu
+GROUP BY usuario.codusu, usuario.nomusu;
+ 
+--------------------- 8
+SELECT usuario.codusu, usuario.nomusu, COUNT(*) AS quantidade_reservas
+FROM usuario
+JOIN reserva ON reserva.codusu = usuario.codusu
+GROUP BY usuario.codusu, usuario.nomusu
+HAVING COUNT(*) >= 2;
+ 
+--------------------- 9
+SELECT livro.codliv, livro.titliv, COUNT(*) AS quantidade_emprestimos
+FROM livro
+JOIN emprestimo ON emprestimo.codliv = livro.codliv
+GROUP BY livro.codliv, livro.titliv
+ORDER BY quantidade_emprestimos DESC
+LIMIT 1;
+ 
+--------------------- 10
+SELECT usuario.codusu, usuario.nomusu, COUNT(*) AS quantidade_reservas
+FROM usuario
+JOIN reserva ON reserva.codusu = usuario.codusu
+GROUP BY usuario.codusu, usuario.nomusu
+ORDER BY quantidade_reservas DESC
+LIMIT 1;
+ 
+--------------------- 11
+SELECT livro.codliv, livro.titliv
+FROM livro
+JOIN emprestimo ON emprestimo.codliv = livro.codliv
+WHERE livro.codbib = 1 AND emprestimo.codusu = 3;
+ 
+--------------------- 12
+SELECT biblioteca.cidbib
+FROM biblioteca
+JOIN livro ON livro.codbib = biblioteca.codbib
+WHERE livro.codliv = 3;
+ 
+--------------------- 13
+SELECT usuario.codusu, usuario.nomusu
+FROM usuario
+JOIN emprestimo ON emprestimo.codusu = usuario.codusu
+JOIN livro ON livro.codliv = emprestimo.codliv
+WHERE livro.codbib = 1 AND datemp >= '2018-01-01' AND datemp < '2019-01-01'
+ 
+UNION
+ 
+SELECT usuario.codusu, usuario.nomusu
+FROM usuario
+JOIN reserva ON reserva.codusu = usuario.codusu
+JOIN livro ON livro.codliv = reserva.codliv
+WHERE livro.codbib = 1 AND datres >= '2018-01-01' AND datres < '2019-01-01';
+ 
+--------------------- 14
+SELECT usuario.codusu, usuario.nomusu
+FROM usuario
+JOIN emprestimo ON emprestimo.codusu = usuario.codusu
+JOIN livro ON livro.codliv = emprestimo.codliv
+WHERE livro.codbib = 1 AND datemp >= '2018-01-01' AND datemp < '2019-01-01'
+ 
+EXCEPT
+ 
+SELECT usuario.codusu, usuario.nomusu
+FROM usuario
+JOIN reserva ON reserva.codusu = usuario.codusu
+JOIN livro ON livro.codliv = reserva.codliv
+WHERE livro.codbib = 1 AND datres >= '2018-01-01' AND datres < '2019-01-01';
+ 
+--------------------- 15
+SELECT *
+FROM emprestimo
+JOIN usuario ON usuario.codusu = emprestimo.codusu
+ORDER BY usuario.nomusu, emprestimo.datemp;
+ 
+--------------------- 16
+SELECT DATE(datemp) AS data, COUNT(*) AS total_dia, AVG(COUNT(*)) OVER () AS media_diaria
+FROM emprestimo
+JOIN livro ON livro.codliv = emprestimo.codliv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+WHERE livro.codbib = 2
+GROUP BY DATE(datemp);
